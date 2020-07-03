@@ -1,12 +1,9 @@
 const express = require('express')
+const productsRoute = require('./src/routes/products')
 const app = express()
 const port = process.env.PORT || 5555
 
-app.get('', (req, res) => {
-    res.json({
-        message: "Deu bom truta"
-    })
-})
+app.use(productsRoute) 
 
 app.listen(port, err => {
     if(err) return console.log(`Não startou ${err}`)
